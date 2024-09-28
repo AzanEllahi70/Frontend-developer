@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submitted Data</title>
+</head>
+<body>
+    <h1>Submitted Data</h1>
+    <table style="border: 1px solid black;">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+        <tr>
+            <td id="name1"></td>
+            <td id="age1"></td>
+        </tr>
+    </table>
+
+    <script>
+        // Retrieve data from localStorage
+        const submittedData = JSON.parse(localStorage.getItem('submittedData'));
+
+        if (submittedData) {
+            // Display the submitted data in the table
+            document.getElementById('name1').textContent = submittedData.name;
+            document.getElementById('age1').textContent = submittedData.age;
+        } else {
+            document.getElementById('name1').textContent = 'No data submitted.';
+            document.getElementById('age1').textContent = '';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Entry</title>
+</head>
+<body>
+    <h1>Enter Data</h1>
+    <table id="data-table" >
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+        <tr>
+            <td><input type="text" id="name" placeholder="Name"></td>
+            <td><input type="number" id="age" placeholder="Age"></td>
+        </tr>
+    </table>
+    <button id="submit">Submit</button>
+
+    <script>
+        document.getElementById('submit').addEventListener('click', () => {
+            const name = document.getElementById('name').value;
+            const age = document.getElementById('age').value;
+
+            // Save data to localStorage
+            const data = { name, age };
+            localStorage.setItem('submittedData', JSON.stringify(data));
+
+            // Redirect to the next page
+            window.location.href = 'Bite.html';
+        });
+    </script>
+</body>
+</html>
